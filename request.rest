@@ -1,0 +1,71 @@
+
+###
+
+GET http://localhost:3000/posts
+
+###
+
+GET http://localhost:3000/posts?sender=noam
+
+###
+
+GET http://localhost:3000/posts/673e107c377444bb6854fda3
+
+###
+
+POST http://localhost:3000/posts
+Content-Type: application/json
+
+{
+    "title": "Check 2",
+    "owner": "Noam",
+    "content": "checking... 2"
+}
+
+###
+
+PUT http://localhost:3000/posts/673e7244b1e4b349b3a74f38
+Content-Type: application/json
+
+{
+    "title": "Hiiiiiiii",
+    "owner": "ron",
+    "content": "updating post"
+}
+
+
+###
+
+GET http://localhost:3000/comments
+
+###
+
+GET http://localhost:3000/comments?user=ron
+
+###
+
+GET http://localhost:3000/comments/673e205e72efe0772f2c0d7b
+
+###
+
+GET http://localhost:3000/comments/post/673e107c377444bb6854fda3
+
+###
+
+POST http://localhost:3000/comments
+Content-Type: application/json
+
+{
+    "user": "noam",
+    "content": "yesssssss",
+    "postId": "673e107c377444bb6854fda3"
+}
+
+###
+
+PUT http://localhost:3000/comments/673e205e72efe0772f2c0d7b
+Content-Type: application/json
+
+{
+    "content": "updating post"
+}
