@@ -1,0 +1,129 @@
+
+###
+
+GET http://localhost:3000/posts
+
+###
+
+GET http://localhost:3000/posts
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NzZjMmI2YjQ0ODY4Zjc0OTkxZTZlMmYiLCJ1c2VybmFtZSI6InJvbjgwMCIsInBhc3N3b3JkIjoiMTIzNCIsImVtYWlsIjoiMTIzNCIsImlhdCI6MTczNTE0MjI2NywiZXhwIjoxNzM1MTQyNTY3fQ.0R8ciFM5gx54y90n9k_Z3foos6VPEjRAHdRTMcSW2cU
+
+
+###
+
+# GET http://localhost:3000/posts/674088366365996d79acfdd2
+
+###
+
+POST http://localhost:3000/posts
+Content-Type: application/json
+
+{
+    "title": "title",
+    "owner": "675063ff82f983bbbce757e8",
+    "content": "content"
+}
+
+##
+
+PUT http://localhost:3000/posts/674088366365996d79acfdd2
+Content-Type: application/json
+
+{
+    "title": "New and amazing post",
+    "owner": "noam12",
+    "content": "Very good job"
+}
+
+###
+
+GET http://localhost:3000/comments
+
+###
+
+GET http://localhost:3000/comments/673e252df28ddaed8bbf6a68
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NzY3ZDUzM2VhZjY3MzAxZDNmYTIwZGUiLCJ1c2VybmFtZSI6InNoYWNoYXIgc2hlbWVzaCIsInBhc3N3b3JkIjoiMTIzNDUiLCJlbWFpbCI6IjEyMzQ1IiwiaWF0IjoxNzM0ODYyOTI3LCJleHAiOjE3MzQ4NjMyMjd9.8Sc7oOEDL9pK-o4HkaD1SXbNYhpmDtYcidpwrOi7EWY
+ ###
+
+GET http://localhost:3000/comments/6740902515e5bdf0e3363dcb
+
+###
+
+GET http://localhost:3000/comments/post/674088366365996d79acfdd2
+
+###
+
+POST http://localhost:3000/comments
+Content-Type: application/json
+
+{
+    "user": "ron",
+    "content": "content",
+    "postId": "674088366365996d79acfdd2"
+}
+
+###
+
+PUT http://localhost:3000/comments/6740902515e5bdf0e3363dcb
+Content-Type: application/json
+
+{
+    "content": "content post updating now"
+}
+
+###
+
+GET http://localhost:3000/users
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NzZjMmI2YjQ0ODY4Zjc0OTkxZTZlMmYiLCJ1c2VybmFtZSI6InJvbjgwMCIsInBhc3N3b3JkIjoiMTIzNCIsImVtYWlsIjoiMTIzNCIsImlhdCI6MTczNTE0MjI2NywiZXhwIjoxNzM1MTQyNTY3fQ.0R8ciFM5gx54y90n9k_Z3foos6VPEjRAHdRTMcSW2cU
+
+
+###
+
+GET http://localhost:3000/users/675063ff82f983bbbce757e8
+
+###
+
+POST http://localhost:3000/users
+Content-Type: application/json
+
+{
+    "username": "noam12",
+    "password": "1234",
+    "email": "noam12m@gmail.com"
+}
+
+###
+
+PUT http://localhost:3000/users/675063b982f983bbbce757e3
+Content-Type: application/json
+
+{
+    "username": "noam12",
+    "password": "12342",
+    "email": "noam12m@gmail.com"
+}
+
+###
+
+POST http://localhost:3000/auth/register
+Content-Type: application/json
+
+{
+    "username": "ron800",
+    "password": "1234",
+    "email": "r80@gmail.com"
+}
+
+###
+
+###
+
+POST http://localhost:3000/auth/login
+Content-Type: application/json
+
+{
+    "email": "r80@gmail.com",
+    "password": "1234"
+}
+
+###
