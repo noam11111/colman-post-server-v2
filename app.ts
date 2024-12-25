@@ -1,3 +1,4 @@
+import { authenticateToken } from "./middlewares/auth_middleware";
 import { swaggerOptions } from "./swagger/swagger_setup";
 
 const dotenv = require("dotenv");
@@ -25,6 +26,11 @@ const appPromise: Promise<any> = new Promise((resolve, reject) => {
 
       app.use(bodyParser.json());
       app.use(bodyParser.urlencoded({ extended: true }));
+      app.use(authenticateToken);
+
+      const authRouter = require("./routes/auth_route");
+
+      app.use("/auth", authRouter);
 
       const postsRouter = require("./routes/posts_route");
 
