@@ -2,8 +2,10 @@ import appPromise from "../app";
 import mongoose from "mongoose";
 import request from "supertest";
 import { UserModel } from "../models/user_model";
-import { convertUserToPlain } from "../controllers/auth_controller";
-import { generateAccessToken } from "../utils/auth/generate_access_token";
+import {
+  convertUserToJwtInfo,
+  generateAccessToken,
+} from "../utils/auth/generate_access_token";
 import {
   afterEach,
   afterAll,
@@ -40,9 +42,9 @@ beforeAll(async () => {
   headers.authorization =
     "Bearer " +
     generateAccessToken(
-      convertUserToPlain(await UserModel.findOne({ email: authUser.email })),
+      convertUserToJwtInfo(await UserModel.findOne({ email: authUser.email })),
       process.env.ACCESS_TOKEN_SECRET,
-      process.env.TOKEN_EXPIRATION
+      process.env.ACCESS_TOKEN_EXPIRATION
     );
 });
 
