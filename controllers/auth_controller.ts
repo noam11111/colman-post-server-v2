@@ -59,8 +59,8 @@ export const login = async (req: Request, res: Response) => {
 };
 
 export const logout = (req: Request, res: Response) => {
-  const refreshToken = req.headers.authorization?.split(" ")[1];
-  if (!refreshToken) throw Error("No refresh token provided");
+  const refreshToken = req.headers.authorization?.split(" ")?.[1];
+  if (!refreshToken) return res.status(401).send("No refresh token provided");
 
   jwt.verify(
     refreshToken,
