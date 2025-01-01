@@ -123,6 +123,10 @@ describe("Auth - Logout", () => {
     await newUser.save();
   });
 
+  afterAll(async () => {
+    await UserModel.deleteMany({ email: user.email });
+  });
+
   test("Logout Successfully", async () => {
     const res = await request(await appPromise)
       .post("/auth/logout")
@@ -179,6 +183,10 @@ describe("Auth - Refresh Token", () => {
 
     newUser.tokens = [refreshToken];
     await newUser.save();
+  });
+
+  afterAll(async () => {
+    await UserModel.deleteMany({ email: user.email });
   });
 
   test("Refresh Token Successfully", async () => {
