@@ -1,8 +1,8 @@
 import jwt from "jsonwebtoken";
-import { User } from "../../dtos/user";
+import { JwtInfo } from "./generate_access_token";
 
 export const generateRefreshToken = (
-  user: User,
+  user: JwtInfo,
   refreshTokenSecret: string,
   expiryTime: string
 ) => {

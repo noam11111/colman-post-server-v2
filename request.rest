@@ -74,7 +74,7 @@ Content-Type: application/json
 ###
 
 GET http://localhost:3000/users
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NzZjMmI2YjQ0ODY4Zjc0OTkxZTZlMmYiLCJ1c2VybmFtZSI6InJvbjgwMCIsInBhc3N3b3JkIjoiMTIzNCIsImVtYWlsIjoiMTIzNCIsImlhdCI6MTczNTE0MjI2NywiZXhwIjoxNzM1MTQyNTY3fQ.0R8ciFM5gx54y90n9k_Z3foos6VPEjRAHdRTMcSW2cU
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2Nzc1NTIzOGQ5NzdlMTc3NzdjOTk5NTQiLCJ1c2VybmFtZSI6InJvbjIwIiwiaWF0IjoxNzM1NzQyNTM5LCJleHAiOjE3MzU3NDI4Mzl9.k_seRqi1svhNa3DoBtldIVn-o163dcb3HVyktAiVBhg
 
 
 ###
@@ -109,9 +109,9 @@ POST http://localhost:3000/auth/register
 Content-Type: application/json
 
 {
-    "username": "ron800",
+    "username": "ron20",
     "password": "1234",
-    "email": "r80@gmail.com"
+    "email": "r20@gmail.com"
 }
 
 ###
@@ -122,8 +122,24 @@ POST http://localhost:3000/auth/login
 Content-Type: application/json
 
 {
-    "email": "r80@gmail.com",
+    "email": "r20@gmail.com",
     "password": "1234"
 }
+
+###
+
+###
+
+POST http://localhost:3000/auth/refresh-token
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2Nzc1NTIzOGQ5NzdlMTc3NzdjOTk5NTQiLCJ1c2VybmFtZSI6InJvbjIwIiwiaWF0IjoxNzM1NzQyNTM5LCJleHAiOjE3MzU4Mjg5Mzl9.6VeyYXOglLCgHP3fnnDH-GWOBgxbAp_zRt4F-F15g38
+
+###
+
+###
+
+POST http://localhost:3000/auth/logout
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2Nzc1NTIzOGQ5NzdlMTc3NzdjOTk5NTQiLCJ1c2VybmFtZSI6InJvbjIwIiwiaWF0IjoxNzM1NzQyNTM5LCJleHAiOjE3MzU4Mjg5Mzl9.6VeyYXOglLCgHP3fnnDH-GWOBgxbAp_zRt4F-F15g38
 
 ###
